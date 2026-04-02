@@ -10,4 +10,5 @@ if [[ "${CLAUDE_CODE_FORCE_RECOVERY_CLI:-0}" == "1" ]]; then
 fi
 
 # Default: full CLI with Ink TUI
-exec bun --env-file=.env ./src/entrypoints/cli.tsx "$@"
+exec bun --feature=BUDDY --env-file=.env ./src/entrypoints/cli.tsx "$@"
+#exec bun --feature=BRIDGE_MODE --feature=VOICE_MODE --feature=KAIROS --feature=WORKFLOW_SCRIPTS --feature=PROACTIVE --feature=DAEMON --feature=FORK_SUBAGENT --feature=BUDDY --feature=MCP_SKILLS --feature=COORDINATOR_MODE --env-file=.env ./src/entrypoints/cli.tsx "$@"
